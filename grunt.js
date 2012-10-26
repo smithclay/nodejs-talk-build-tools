@@ -4,10 +4,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: '<json:package.json>',
     meta: {
-      banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-        '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-        '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' +
-        '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;'
+      banner: '/*! <%= pkg.name %> - v<%= pkg.version %> */'
       },
     concat: {
       dist: {
@@ -22,7 +19,7 @@ module.exports = function(grunt) {
       }
     },
     lint: {
-      files: ['grunt.js', 'lib/**/*.js']
+      files: ['grunt.js', 'js/reveal.js']
     },
     jshint: {
       options: {
@@ -44,6 +41,8 @@ module.exports = function(grunt) {
     },
     uglify: {}
   });
+  // Build task.
+  grunt.registerTask('build', 'concat min');
 
   // Default task.
   grunt.registerTask('default', 'lint test concat min');
