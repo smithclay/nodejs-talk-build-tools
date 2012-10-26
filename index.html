@@ -58,7 +58,7 @@
 						<h5 class="secondary">We needed a way to manage the mess.</h5>
 					</section>
 					<section>
-						<h3>We had an short wish list</h3>
+						<h2 class="secondary">We wanted</h2>
 						<ol>
 							<li>Concatenation</li>
 							<li>Minification</li>
@@ -78,7 +78,7 @@
 					<section>
 						<h2>Tools</h2>
 						<ol>
-							<li>Concatenation: <a href="http://www.nczonline.net/blog/2009/09/22/introducing-combiner-a-javascriptcss-concatenation-tool/">combiner.jar</a>, circa 2009</li>
+							<li>Concatenation: <a href="http://www.nczonline.net/blog/2009/09/22/introducing-combiner-a-javascriptcss-concatenation-tool/">combiner.jar</a> (circa 2009 fake sprockets in Java)</li>
 							<li>Minification: <a href="https://developers.google.com/closure/compiler/">Closure Compiler</a></li>
 						</ol>
 					</section>
@@ -121,7 +121,7 @@ task('default', function (params) {
 					</section>
 					<section>
 						<h3>We started using lots of npm packages</h3>
-						<h5 class="secondary">This make writing build tasks easier.</h5>
+						<h5 class="secondary">This makes writing build tasks easier.</h5>
 						<ul>
 							<li><a href="https://github.com/LearnBoost/knox">knox</a> (Amazon S3 Uploading)</li>
 							<li><a href="https://github.com/isaacs/rimraf">rimraf</a> (native node `rm -rf`)</li>
@@ -132,7 +132,7 @@ task('default', function (params) {
 					</section>
 					<section data-state="alert">
 						<h2>Problem</h2>
-						<h3 class="secondary">We ended up with a 1000+ line Jakefile.</h3>
+						<h3 class="secondary">We ended up with a 1000+ line Jakefile we couldn't reuse.</h3>
 						<script src="https://gist.github.com/3943043.js"> </script>
 					</section>
 				</section>
@@ -166,11 +166,11 @@ grunt.initConfig({
 						<blockquote cite="http://benalman.com/news/2012/08/why-grunt/">
 							grunt favors the “configuration” approach for tasks for one simple reason: people seem to prefer a more declarative “configuration” style approach to a “scripting” approach.
 						</blockquote>
-						<h5>from grunt.js author @cowboy</h5>
+						<h5>-grunt.js author <a href="http://twitter.com/cowboy">@cowboy (Ben Alman)</a></h5>
 					</section>
 					<section>
-						<h2>But doesn't that mean grunt is glorified ant?</h2>
-						<h1 class="secondary">No...</h1>
+						<h2 class="secondary">Grunt is balanced</h2>
+						<p>Lots of common tasks and plugins that you can configure in a JSON object, but you also can script with the full power of node.js.</p>
 					</section>
 					<section>
 						<h2>Grunt can load NPM plugins!</h2>
@@ -178,12 +178,22 @@ grunt.initConfig({
 // Load some grunt tasks we’ve developed from the npm package grunt-barkeep.
 grunt.loadNpmTasks('grunt-barkeep');
 // Load grunt-shell
-grunt.loadNpmTasks('grunt-barkeep');
+grunt.loadNpmTasks('grunt-shell');
 // Load grunt-jasmine
 grunt.loadNpmTasks('grunt-jasmine');
 						</code></pre>	
 						<p>It's easy to create <a href="http://github.com/flite/barkeep">your own plugins.</a></p>	
 						<p>Check out <a href="http://www.gruntjs.com/">gruntjs.com</a></p>				
+					</section>
+					<section>
+						<h2>Plugins we use (and like)</h2>
+						<ul>
+							<li><a href="http://github.com/flite/barkeep">grunt-barkeep</a>: our special sauce (s3, ducksboard, snockets)!</li>
+							<li><a href="https://github.com/sindresorhus/grunt-shell">grunt-shell</a>: execute shell tasks!</li>
+							<li><a href="https://github.com/pifantastic/grunt-s3">grunt-s3</a>: send stuff to Amazon S3!</li>
+							<li><a href="https://npmjs.org/package/grunt-jasmine">grunt-jasmine</a>: run jasmine tests headlessly in Phantom JS!**</li>
+						</ul>
+						<small>**there's headless grunt tasks for testing in almost any framework.</small>
 					</section>
 					<section>
 						<h2>It's easy to create custom tasks in grunt.</h2>
@@ -201,25 +211,26 @@ grunt.utils.async.forEach(js, function (fn, callback) {
 						</code></pre>						
 					</section>
 					<section>
-						<h2 class="secondary">Grunt is balanced</h2>
-						<p>Lots of common tasks and plugins that you can configure, but you can also script whatever.</p>
-					</section>
-					<section>
 						<h3>The Future: grunt 0.4.0</h2>
 						<h5 class="secondary">Coming soon?</h5>
 						<ul>
 							<li>Requires node > 0.8.0</li>
-							<li>Externalizes most plugins</li>
+							<li>Externalizes a lot of plugins in the gruntjs github repository</li>
 							<li>Lots of bug fixes and new features</li>
 						</ul>
 					</section>
 				</section>
 				<section>
-					<h2>Build Version 3</h2>
-					<h1 class="secondary">?</h1>
+					<h2>Build Version 3 (?)</h2>
+					<pre><code>rm -rf *.js</code></pre>
 				</section>
 				<section>
 					<h1>THE END</h1>
+					<h2 class="secondary">Summary:</h2>
+					<ul>
+						<li><a href="http://www.gruntjs.com">Grunt</a> is good.</li>
+						<li><a href="http://www.flite.com/careers">Flite</a> is hiring.</li>
+					</ul>
 				</section>
 			</div>
 		</div>
